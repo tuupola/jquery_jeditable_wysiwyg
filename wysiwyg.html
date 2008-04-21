@@ -1,0 +1,118 @@
+<?php      
+
+/* No hardoced URL's in examples. Just copy the folder to server. */  
+$folder = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
+$url    = sprintf('http://%s%sphp/', $_SERVER['SERVER_NAME'], $folder);
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" debug="true">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Jeditable MarkItUp! Custom Input Demo</title>
+<meta name="generator" content="Mephisto" />
+<link href="http://www.appelsiini.net/stylesheets/main.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/tuupola" title="Atom feed" />
+<script src="/mint/?js" type="text/javascript"></script>
+
+<script src="http://static.taevas.ee/js/jquery-1.2.3.mini.js" type="text/javascript" charset="utf-8"></script>
+<script src="wysiwyg/jquery.wysiwyg.js" type="text/javascript"></script>
+<link rel="stylesheet" href="wysiwyg/jquery.wysiwyg.css" type="text/css" media="screen" charset="utf-8">
+
+<script src="http://www.appelsiini.net/download/jquery.jeditable.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery.jeditable.wysiwyg.js" type="text/javascript"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  
+  $('#wysiwyg_3').wysiwyg({controls : {
+      separator04 : { visible : true },
+
+      insertOrderedList : { visible : true },
+      insertUnorderedList : { visible : true }
+  }});
+
+  $('#wysiwyg_1').editable('<?php print $url ?>save.php', { 
+    indicator : '<img src="img/indicator.gif">',
+    type      : 'wysiwyg',
+    width     : 500,
+    height    : 200,
+    onblur    : 'cancel',
+    submit    : 'OK',
+    cancel    : 'Cancel',
+    wysiwyg   : { controls : { separator04         : { visible : false },
+                               insertOrderedList   : { visible : false },
+                               insertUnorderedList : { visible : false }
+                }
+    }
+  });
+
+  $('#wysiwyg_2').editable('<?php print $url ?>save.php', { 
+    indicator : '<img src="img/indicator.gif">',
+    type      : 'wysiwyg',
+    width     : 500,
+    height    : 200,
+    onblur    : 'cancel',
+    submit    : 'OK',
+    cancel    : 'Cancel'
+  });
+    
+});
+</script>
+
+<style type="text/css">
+#sidebar {
+  width: 0px;
+}
+
+#content {
+  width: 770px;
+}
+</style>
+
+</head>
+
+<body>
+  <div id="wrap"> 
+    <div id="header">
+      <p>
+        <h1>Jeditable</h1><br />
+        <small>Edit in place plugin for jQuery.</small>
+        <ul id="nav">
+          <li id="first"><a href="/" class="active">weblog</a></li>
+          <li><a href="/projects" class="last">projects</a></li>
+        </ul>
+      </p>
+    </div>
+    <div id="content">
+      
+    <div class="entry">
+            
+    <p>You might also want to check <a href="custom.html">other custom inputs demo</a>.
+
+    <h2>Default settings</h2>
+    
+    <div class="editable" id="wysiwyg_1"><?php print file_get_contents($url . 'load.php?id=wysiwyg_1') ?></div>
+    </div>
+
+    <h2>Extra settings</h2>
+    
+    <div class="editable" id="wysiwyg_2"><?php print file_get_contents($url . 'load.php?id=wysiwyg_2') ?></div>
+    </div>
+    
+    <div id="sidebar">
+
+  </div>
+  
+  <div id="footer">
+  </div>
+
+  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    _uacct = "UA-190966-1";
+    urchinTracker();
+  </script>
+
+</body>
+</html>

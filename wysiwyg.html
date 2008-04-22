@@ -10,7 +10,7 @@ $url    = sprintf('http://%s%sphp/', $_SERVER['SERVER_NAME'], $folder);
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Jeditable MarkItUp! Custom Input Demo</title>
+<title>Jeditable jWYSIWYG! Custom Input Demo</title>
 <meta name="generator" content="Mephisto" />
 <link href="http://www.appelsiini.net/stylesheets/main.css" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/tuupola" title="Atom feed" />
@@ -36,9 +36,9 @@ $(function() {
   $('#wysiwyg_1').editable('<?php print $url ?>save.php', { 
     indicator : '<img src="img/indicator.gif">',
     type      : 'wysiwyg',
-    width     : 500,
-    height    : 200,
-    onblur    : 'cancel',
+    width     : 640,
+    height    : 'auto',
+    onblur    : 'ignore',
     submit    : 'OK',
     cancel    : 'Cancel',
     wysiwyg   : { controls : { separator04         : { visible : false },
@@ -51,9 +51,9 @@ $(function() {
   $('#wysiwyg_2').editable('<?php print $url ?>save.php', { 
     indicator : '<img src="img/indicator.gif">',
     type      : 'wysiwyg',
-    width     : 500,
-    height    : 200,
-    onblur    : 'cancel',
+    width     : 640,
+    height    : 'auto',
+    onblur    : 'ignore',
     submit    : 'OK',
     cancel    : 'Cancel'
   });
@@ -93,12 +93,12 @@ $(function() {
 
     <h2>Default settings</h2>
     
-    <div class="editable" id="wysiwyg_1"><?php print file_get_contents($url . 'load.php?id=wysiwyg_1') ?></div>
+    <div style="width: 640px" class="editable" id="wysiwyg_1"><?php print file_get_contents($url . 'load.php?id=wysiwyg_1') ?></div>
     </div>
 
     <h2>Extra settings</h2>
     
-    <div class="editable" id="wysiwyg_2"><?php print file_get_contents($url . 'load.php?id=wysiwyg_2') ?></div>
+    <div style="width: 640px" class="editable" id="wysiwyg_2"><?php print file_get_contents($url . 'load.php?id=wysiwyg_2') ?></div>
     </div>
     
     <div id="sidebar">

@@ -6,7 +6,7 @@
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  * 
- * Depends on markItUp! jWYSIWYG plugin by Juan M Martínez:
+ * Depends on jWYSIWYG plugin by Juan M Martínez:
  *   http://projects.bundleweb.com.ar/jWYSIWYG/
  *
  * Project home:
@@ -27,12 +27,12 @@ $.editable.addInputType('wysiwyg', {
     },
     plugin : function(settings, original) {
         var self = this;
-        /* Seems because of iframe trickery used by jWYSIWYG */
-        /* we need to use setTimeout()                       */
+        /* Force autosave off to avoid "element.contentWindow has no properties" */
+        // settings.wysiwyg = $.extend({autoSave: false}, settings.wysiwyg);
         if (settings.wysiwyg) {
-            setTimeout(function() { $('textarea', self).wysiwyg(settings.wysiwyg); }, 1);            
+            setTimeout(function() { $('textarea', self).wysiwyg(settings.wysiwyg); }, 0);
         } else {
-            setTimeout(function() { $('textarea', self).wysiwyg(); }, 1);
+            setTimeout(function() { $('textarea', self).wysiwyg(); }, 0);
         }
     }
 });

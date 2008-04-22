@@ -15,7 +15,7 @@
     $.fn.document = function()
     {
         var element = this[0];
-        if ( element.nodeName.toLowerCase() == 'iframe' )
+        if ( element.nodeName.toLowerCase() == 'iframe')
             return element.contentWindow.document;
             /*
             return ( $.browser.msie )
@@ -351,7 +351,6 @@
 
             this.initialHeight = newY - 8;
             this.initialContent = $(element).text();
-console.log(element);
             this.initFrame();
 
             if ( this.initialContent.length == 0 )

@@ -6,7 +6,7 @@
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  * 
- * Depends on jWYSIWYG plugin by Juan M Martínez:
+ * Depends on jWYSIWYG plugin by Juan M Martinez:
  *   http://projects.bundleweb.com.ar/jWYSIWYG/
  *
  * Project home:

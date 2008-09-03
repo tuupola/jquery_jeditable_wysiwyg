@@ -27,5 +27,5 @@ if ('textile' == $renderer) {
     $t = new Textile();
     print $t->TextileThis(stripslashes($_POST['value']));
 } else {
-    print $_POST['value']; 
+    print stripslashes($_POST['value']); 
 }

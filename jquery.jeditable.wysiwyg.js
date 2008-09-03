@@ -28,11 +28,18 @@ $.editable.addInputType('wysiwyg', {
     plugin : function(settings, original) {
         var self = this;
         /* Force autosave off to avoid "element.contentWindow has no properties" */
-        // settings.wysiwyg = $.extend({autoSave: false}, settings.wysiwyg);
+        settings.wysiwyg = $.extend({autoSave: false}, settings.wysiwyg);
         if (settings.wysiwyg) {
             setTimeout(function() { $('textarea', self).wysiwyg(settings.wysiwyg); }, 0);
         } else {
             setTimeout(function() { $('textarea', self).wysiwyg(); }, 0);
         }
+    },
+    submit : function(settings, original) {
+        var iframe         = $("iframe", this).get(0); 
+        var inner_document = iframe.contentDocument.body ? iframe.contentDocument.body : iframe.contentWindow.document.body;
+        var new_content    = $(inner_document).html();
+        //console.log(new_content);
+        $('textarea', this).val(new_content);
     }
 });

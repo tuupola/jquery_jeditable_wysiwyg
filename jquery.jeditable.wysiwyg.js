@@ -37,9 +37,8 @@ $.editable.addInputType('wysiwyg', {
     },
     submit : function(settings, original) {
         var iframe         = $("iframe", this).get(0); 
-        var inner_document = iframe.contentDocument.body ? iframe.contentDocument.body : iframe.contentWindow.document.body;
+        var inner_document = typeof(iframe.contentDocument) == 'undefined' ?  iframe.contentWindow.document.body : iframe.contentDocument.body;
         var new_content    = $(inner_document).html();
-        //console.log(new_content);
         $('textarea', this).val(new_content);
     }
 });

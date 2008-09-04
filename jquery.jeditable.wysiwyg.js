@@ -18,7 +18,23 @@
  
 $.editable.addInputType('wysiwyg', {
     /* Use default textarea instead of writing code here again. */
-    element : $.editable.types.textarea.element,
+    //element : $.editable.types.textarea.element,
+    element : function(settings, original) {
+        /* Hide textarea to avoid flicker. */
+        var textarea = $('<textarea>').css("opacity", "0");
+        if (settings.rows) {
+            textarea.attr('rows', settings.rows);
+        } else {
+            textarea.height(settings.height);
+        }
+        if (settings.cols) {
+            textarea.attr('cols', settings.cols);
+        } else {
+            textarea.width(settings.width);
+        }
+        $(this).append(textarea);
+        return(textarea);
+    },
     content : function(string, settings, original) { 
         /* jWYSIWYG plugin uses .text() instead of .val()        */
         /* For some reason it did not work work with generated   */

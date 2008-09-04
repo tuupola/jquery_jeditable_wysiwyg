@@ -26,13 +26,19 @@ $url    = sprintf('http://%s%sphp/', $_SERVER['SERVER_NAME'], $folder);
 <script type="text/javascript" charset="utf-8">
 $(function() {
   
-  $('#wysiwyg_3').wysiwyg({controls : {
-      separator04 : { visible : true },
-
-      insertOrderedList : { visible : true },
-      insertUnorderedList : { visible : true }
-  }});
-
+  /* Fix FireBug */
+  /*
+  if ($.browser.mozilla) {
+      window.loadFirebugConsole();    
+  };
+  */
+  
+  /* Handle links inside editable area. */
+  $('.editable > a').bind('click', function() {
+      $(this).parent().trigger('click');
+      return false; 
+  });
+  
   $('#wysiwyg_1').editable('<?php print $url ?>save.php', { 
     indicator : '<img src="img/indicator.gif">',
     type      : 'wysiwyg',

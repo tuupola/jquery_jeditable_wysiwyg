@@ -40,28 +40,28 @@ $(function() {
   });
   
   $('#wysiwyg_1').editable('<?php print $url ?>save.php', { 
-    indicator : '<img src="img/indicator.gif">',
-    type      : 'wysiwyg',
-    width     : 640,
-    height    : 'auto',
-    onblur    : 'ignore',
-    submit    : 'OK',
-    cancel    : 'Cancel',
-    wysiwyg   : { controls : { separator04         : { visible : false },
-                               insertOrderedList   : { visible : false },
-                               insertUnorderedList : { visible : false }
-                }
-    }
-  });
-
-  $('#wysiwyg_2').editable('<?php print $url ?>save.php', { 
-    indicator : '<img src="img/indicator.gif">',
+    indicator : '<img src="../img/indicator.gif">',
     type      : 'wysiwyg',
     width     : 640,
     height    : 'auto',
     onblur    : 'ignore',
     submit    : 'OK',
     cancel    : 'Cancel'
+  });
+
+  $('#wysiwyg_2').editable('<?php print $url ?>save.php', { 
+    indicator : '<img src="../img/indicator.gif">',
+    type      : 'wysiwyg',
+    width     : 640,
+    height    : 'auto',
+    onblur    : 'ignore',
+    submit    : 'OK',
+    cancel    : 'Cancel',
+    wysiwyg   : { controls : { separator04         : { visible : true },
+                               insertOrderedList   : { visible : true },
+                               insertUnorderedList : { visible : true }
+                }
+    }
   });
     
 });

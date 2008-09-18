@@ -10,6 +10,6 @@ $default['wysiwyg_1'] = $default['wysiwyg_2'] =
 <li>Bar</li>
 </ul>
 
-Duis autem vel eum <a href="http://www.appelsiini.net/projects/jeditable">edit in place</a> in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
+Duis autem vel eum in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
 '
 ?>

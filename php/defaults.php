@@ -3,7 +3,7 @@
 /* these are just defaults for demonstrating purposes */
 
 $default['wysiwyg_1'] = $default['wysiwyg_2'] = 
-'Lorem ipsum dolor sit amet, consectetuer adipiscing _elit, sed diam nonummy nibh_ euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+'Lorem ipsum dolor sit amet, consectetuer adipiscing <i>elit, sed diam nonummy nibh</i> euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 
 <ul>
 <li>Foo</li>

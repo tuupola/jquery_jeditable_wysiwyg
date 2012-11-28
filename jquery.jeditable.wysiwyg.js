@@ -56,6 +56,6 @@ $.editable.addInputType('wysiwyg', {
         var iframe         = $("iframe", this).get(0); 
         var inner_document = typeof(iframe.contentDocument) == 'undefined' ?  iframe.contentWindow.document.body : iframe.contentDocument.body;
         var new_content    = $(inner_document).html();
-        $('textarea', this).val(new_content);
+        $('textarea', this).text(new_content);
     }
 });

@@ -21,7 +21,8 @@ $.editable.addInputType('wysiwyg', {
     //element : $.editable.types.textarea.element,
     element : function(settings, original) {
         /* Hide textarea to avoid flicker. */
-        var textarea = $('<textarea>').css("opacity", "0");
+        /* .css("opacity", "0") breaks HTML editing: see https://github.com/tuupola/jquery_jeditable_wysiwyg/commit/3ded3c17027f2284385cc1a5e39be44963e63da2#commitcomment-2151916 */
+        var textarea = $('<textarea>');
         if (settings.rows) {
             textarea.attr('rows', settings.rows);
         } else {
